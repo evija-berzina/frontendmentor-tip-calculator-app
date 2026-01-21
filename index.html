@@ -8,37 +8,53 @@
   
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main>
+    <img src="./images/logo.svg" alt="Tip calculator logo">
+    <form>
+      <section>
+        <label for="bill">Bill</label>
+        <input id="bill" name="bill" placeholder="0" min="0" type="number" step="0.01"/>
+      </section>
+      <section>
+        <h2 class="sr-only">Tip selection</h2>
+        <label for="tip">Select Tip %</label>
+        <div role="radiogroup">
+          <button type="button" role="radio" aria-checked="false">5%</button>
+          <button type="button" role="radio" aria-checked="false">10%</button>
+          <button type="button" role="radio" aria-checked="false">15%</button>
+          <button type="button" role="radio" aria-checked="false">25%</button>
+          <button type="button" role="radio" aria-checked="false">50%</button>
+          <input id="tip" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false"/>
+        </div>
+      </section>
+      <section>
+        <label for="number-of-people">Number of People</label>
+        <input id="number-of-people" name="number-of-people" placeholder="0" min="0" type="number" step="1"/>
+      </section>
+      <section>
+        <h2 class="sr-only">Results section</h2>
+        <dl>
+          <div>
+            <div>
+              <dt>Tip Amount</dt>
+              <dd>/ per person</dd>
+            </div>
+            <dd>$4.25</dd>
+          </div>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <div>
+            <div>
+              <dt>Total</dt>
+              <dd>/ per person</dd>
+            </div>
+            <dd>$32.25</dd>
+          </div>
+        </dl>
+        <button type="reset">Reset</button>
+      </section>
+    </form>
+  </main>
 </body>
 </html>
