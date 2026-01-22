@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -12,24 +13,24 @@
 <body>
   <main>
     <img src="./images/logo.svg" alt="Tip calculator logo">
-    <form>
-      <section>
+    <form class="form-container">
+      <section class="bil-section flex">
         <label for="bill">Bill</label>
         <input id="bill" name="bill" placeholder="0" min="0" type="number" step="0.01"/>
       </section>
-      <section>
+      <section class="tip-section flex">
         <h2 class="sr-only">Tip selection</h2>
         <label for="tip">Select Tip %</label>
-        <div role="radiogroup">
-          <button type="button" role="radio" aria-checked="false">5%</button>
-          <button type="button" role="radio" aria-checked="false">10%</button>
-          <button type="button" role="radio" aria-checked="false">15%</button>
-          <button type="button" role="radio" aria-checked="false">25%</button>
-          <button type="button" role="radio" aria-checked="false">50%</button>
-          <input id="tip" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false"/>
+        <div class="tip-choice-section" role="radiogroup">
+          <button class="tip-btn" type="button" role="radio" aria-checked="false">5%</button>
+          <button class="tip-btn" type="button" role="radio" aria-checked="false">10%</button>
+          <button class="tip-btn" type="button" role="radio" aria-checked="false">15%</button>
+          <button class="tip-btn" type="button" role="radio" aria-checked="false">25%</button>
+          <button class="tip-btn" type="button" role="radio" aria-checked="false">50%</button>
+          <input id="tip" class="tip-input" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false"/>
         </div>
       </section>
-      <section>
+      <section class="number-of-people-section flex">
         <label for="number-of-people">Number of People</label>
         <input id="number-of-people" name="number-of-people" placeholder="0" min="0" type="number" step="1"/>
       </section>

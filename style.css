@@ -1,0 +1,216 @@
+/* --------------------------- */
+/* Custom properties           */
+/* --------------------------- */
+
+:root {
+  /* colors */
+  --clr-dark-green: 183 100% 15%;
+  --clr-light-green: 172 67% 45%;
+  --clr-grey-500: 186 14% 43%;
+  --clr-grey-400: 184 14% 56%;
+  --clr-grey-200: 185 41% 84%;
+  --clr-grey-50: 189 47% 97%;
+  --clr-white: 0 100% 100%;
+
+  /* font-sizes */
+  --fs-large: 2.5rem;
+  --fs-medium: 1.5rem;
+  --fs-small: 1.25rem;
+  --fs-xsmall: 1rem;
+  --fs-body: 0.875rem;
+
+  /* font-families */
+  --ff-spaceMono: "Space Mono", monospace;
+
+  /* font-weight */
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+/* --------------------------- */
+/* Font                        */
+/* --------------------------- */
+
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-weight: 400;
+  src: url('.fonts/SpaceMono-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-weight: 700;
+  src: url('./fonts/SpaceMono-Bold.ttf') format('ttf');
+}
+
+/* --------------------------- */
+/* Reset                       */
+/* --------------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: var(--fw-400);
+}
+
+/* set up the body */
+body {
+  font-family: var(--ff-spaceMono);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-700);
+  color: hsl(var(--clr-grey-500));
+  background-color: hsl(var(--clr-grey-200));
+  line-height: 1.5;
+  letter-spacing: 1px;
+  /* min-height: 100vh; */
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------- */
+/* Utility classes              */
+/* --------------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+/* screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+
+.bg-blue {
+  background-color: hsl(var(--clr-dark-blue));
+}
+
+.bg-grey {
+  background-color: hsl(var(--clr-dark-grey));
+}
+
+.bg-yellow {
+  background-color: hsl(var(--clr-dark-yellow));
+}
+
+/* typography */
+
+.letter-spacing-1 { letter-spacing: 0.8px; } 
+.letter-spacing-2 { letter-spacing: 1px; } 
+.letter-spacing-3 { letter-spacing: 1.25px; }
+.letter-spacing-4 { letter-spacing: 1.5px; } 
+.letter-spacing-5 { letter-spacing: 2.5px; }
+
+.uppercase { text-transform: uppercase; }
+
+/* --------------------------- */
+/* Compontents                 */
+/* --------------------------- */
+
+.form-container {
+  background-color: hsl(var(--clr-white));
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 1.5rem;
+}
+
+.bil-section {
+  flex-direction: column;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+.tip-section {
+  flex-direction: column;
+}
+
+.tip-choice-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tip-btn {
+  background-color: hsl(var(--clr-dark-green));
+  color: hsl(var(--clr-white));
+  width: 100%;
+}
+
+.tip-input {
+  padding: 0;
+}
+
+.number-of-people-section {
+  flex-direction: column;
+}
