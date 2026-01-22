@@ -214,3 +214,13 @@ input[type="number"]::-webkit-inner-spin-button {
 .number-of-people-section {
   flex-direction: column;
 }
+
+.results-section {
+  background-color: hsl(var(--clr-dark-green));
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.reset-btn {
+  background-color: hsl(var(--clr-light-green));
+}
