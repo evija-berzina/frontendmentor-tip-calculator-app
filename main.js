@@ -1,78 +1,87 @@
 const billInput = document.querySelector('.bill-js');
-const tipInput = document.querySelectorAll('.tip-input-js');
+const tipBtn = document.querySelectorAll('.tip-btn-js');
+const tipInput = document.querySelector('.tip-input-js');
 const numberOfPeople = document.querySelector('.number-of-people-js');
 const tipResult = document.querySelector('.tip-amount-js');
-let bills = 0;
-let tips = 0;
-let peoples = 0;
+const totalResult = document.querySelector('.total-js');
+const resetBtn = document.querySelector('.reset-btn-js');
 
-
+let bill = 0;
+let tip = 0;
+let peopleCount = 0;
 
 billInput.addEventListener('input', () => {
-  const bill = Number(billInput.value);
-  if (bill > 0) {
-    bills = bill;
-    console.log(bills)
-    updateTipAmount ();
-  }
-})
+  bill = Number(billInput.value) || 0;
+  updateResults();
+});
 
-tipInput.forEach(input => {
+tipBtn.forEach(input => {
   input.addEventListener('click', () => {
-    const tip = Number(input.dataset.value);
-      tips = tip;
-      console.log(tips)
-      updateTipAmount ();
+    tip = Number(input.dataset.value);
+    updateResults();
   })
-})
+});
+
+tipInput.addEventListener('input', () => {
+  const tipValue = Number(tipInput.value);
+  if (Number.isInteger(tipValue) && tipValue > 0) {
+    tip = tipValue;
+    updateResults();
+  } else {
+    renderResults();
+  }
+});
 
 numberOfPeople.addEventListener('input', () => {
   const people = Number(numberOfPeople.value);
-  if (people > 0) {
-    peoples = people;
-    console.log(peoples)
-    updateTipAmount ();
+  if (Number.isInteger(people) && people > 0) {
+    peopleCount = people;
+    updateResults();
+  } else {
+    renderResults();
   }
-})
+});
 
-function calculations () {
-  const calculatedValue = (bills/100)*tips / peoples;
-  const tipAmount = Math.floor(calculatedValue*100)/100;
-   
-  //const total = (bill / people) + tipAmount;
-  tipResult.textContent = tipAmount;
-  return tipAmount;
+resetBtn.addEventListener('click', () => {
+  renderTipCalculator();
+});
+
+function tipAmountCalculation() {
+  if (peopleCount === 0) return 0; //ar 0 dalīt nevar
+  const calculatedValue = (bill/100)*tip / peopleCount;
+  return Math.floor(calculatedValue*100)/100;
 }
 
-function updateTipAmount () {
-  if (bills > 0 && tips > 0 && peoples > 0) {
-    const tipAmount = calculations();
-    console.log(tipAmount);
+function totalCalculation(tipAmount) {
+  if (peopleCount === 0) return 0;
+  const calculatedValue = (bill/peopleCount) + tipAmount;
+  return Math.floor(calculatedValue*100)/100;
+}
+
+function updateResults() {
+  if (bill > 0 && tip > 0 && peopleCount > 0) {
+    const tipAmount = tipAmountCalculation();
+    tipResult.textContent = tipAmount.toFixed(2);
+    const total = totalCalculation(tipAmount);
+    totalResult.textContent = total.toFixed(2);
+  } else {
+    renderResults();
   }
 }
 
-updateTipAmount ();
+function renderResults () {
+  tipResult.textContent = '0.00';
+  totalResult.textContent = '0.00';
+}
 
+function renderTipCalculator() {
+  bill = 0;
+  tip = 0;
+  peopleCount = 0;
+  billInput.value = '';
+  tipInput.value = '';
+  numberOfPeople.value = '';
+  renderResults();
+}
 
-
-
-
-
-
-
-
-  // 
- 
-  // tipInput.forEach(inp => {
-  //   inp.addEventListener('input',() => {
-  //     Number(tipInput.value);
-  //     console.log(tipInput.value)
-  //   })
-  // })
-
-  // console.log(tip);
-  
-  // console.log(people);
-  //   
-  //   console.log(tipAmount);
-  // console.log(total);
+updateResults();
