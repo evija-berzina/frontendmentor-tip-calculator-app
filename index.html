@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
-
+  <script type="module" src="main.js" defer></script>
 </head>
 <body>
   <main>
@@ -16,23 +16,23 @@
     <form class="form-container">
       <section class="bil-section flex">
         <label for="bill">Bill</label>
-        <input id="bill" name="bill" placeholder="0" min="0" type="number" step="0.01"/>
+        <input id="bill" class="bill-js" name="bill" placeholder="0" min="0" type="number" step="0.01"/>
       </section>
       <section class="tip-section flex">
         <h2 class="sr-only">Tip selection</h2>
         <label for="tip">Select Tip %</label>
         <div class="tip-choice-section" role="radiogroup">
-          <button class="tip-btn" type="button" role="radio" aria-checked="false">5%</button>
-          <button class="tip-btn" type="button" role="radio" aria-checked="false">10%</button>
-          <button class="tip-btn" type="button" role="radio" aria-checked="false">15%</button>
-          <button class="tip-btn" type="button" role="radio" aria-checked="false">25%</button>
-          <button class="tip-btn" type="button" role="radio" aria-checked="false">50%</button>
-          <input id="tip" class="tip-input" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false"/>
+          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="5">5%</button>
+          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="10">10%</button>
+          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="15">15%</button>
+          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="25">25%</button>
+          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="50">50%</button>
+          <input id="tip" class="tip-input tip-input-js" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false">
         </div>
       </section>
       <section class="number-of-people-section flex">
         <label for="number-of-people">Number of People</label>
-        <input id="number-of-people" name="number-of-people" placeholder="0" min="0" type="number" step="1"/>
+        <input id="number-of-people" class="number-of-people-js" name="number-of-people" placeholder="0" min="0" type="number" step="1"/>
       </section>
       <section class="results-section flex">
         <h2 class="sr-only">Results section</h2>
@@ -42,7 +42,8 @@
               <dt>Tip Amount</dt>
               <dd>/ per person</dd>
             </div>
-            <dd>$4.25</dd>
+            <dd>$<span class="tip-amount-js"></span>
+            </dd>
           </div>
 
           <div>
@@ -50,10 +51,10 @@
               <dt>Total</dt>
               <dd>/ per person</dd>
             </div>
-            <dd>$32.25</dd>
+            <dd>$<span class="total-js"></span></dd>
           </div>
         </dl>
-        <button class="reset-btn" type="reset">Reset</button>
+        <button class="reset-btn reset-btn-js" type="button">Reset</button>
       </section>
     </form>
   </main>
