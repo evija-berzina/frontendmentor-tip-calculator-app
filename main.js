@@ -24,21 +24,21 @@ tipBtn.forEach(input => {
 
 tipInput.addEventListener('input', () => {
   const tipValue = Number(tipInput.value);
-  if (Number.isInteger(tipValue) && tipValue > 0) {
+  if (!Number.isInteger(tipValue) || tipValue <= 0) {
+    renderResults();
+  } else {
     tip = tipValue;
     updateResults();
-  } else {
-    renderResults();
   }
 });
 
 numberOfPeople.addEventListener('input', () => {
   const people = Number(numberOfPeople.value);
-  if (Number.isInteger(people) && people > 0) {
+  if (!Number.isInteger(people) || people <= 0) {
+    renderResults();
+  } else {
     peopleCount = people;
     updateResults();
-  } else {
-    renderResults();
   }
 });
 
