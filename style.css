@@ -85,7 +85,7 @@ p {
 /* set up the body */
 body {
   font-family: var(--ff-spaceMono);
-  font-size: var(--fs-body);
+  font-size: var(--fs-s-body);
   font-weight: var(--fw-700);
   color: hsl(var(--clr-grey-500));
   background-color: hsl(var(--clr-grey-200));
@@ -185,6 +185,15 @@ select {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 1.5rem;
+}
+
+.labels {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.error-msg {
+  color: orange;
 }
 
 .bil-section {
