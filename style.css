@@ -14,6 +14,7 @@
 
   /* font-sizes */
   --fs-large: 2.5rem;
+  --fs-medium-l: 2rem;
   --fs-medium: 1.5rem;
   --fs-small: 1.25rem;
   --fs-xsmall: 1rem;
@@ -185,6 +186,13 @@ select {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 1.5rem;
+  bottom: 0;
+}
+
+.inputs-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .labels {
@@ -215,6 +223,7 @@ select {
 .number-of-people-input,
 .error-border-people {
   background-color: hsl(var(--clr-grey-50));
+  color: hsl(var(--clr-dark-green));
   font-size: var(--fs-small);
   text-align: end;
   border-radius: 5px;
@@ -372,4 +381,63 @@ input[type="number"] {
 .reset-btn:not(:disabled):hover,
 .reset-btn:not(:disabled):focus {
   background-color: hsl(168 60% 70%);
+}
+
+@media (min-width: 32rem) {
+  .form-container {
+    margin-inline: auto;
+    margin-bottom: 3rem;
+    width: 400px;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 50rem) {
+  body {
+    height: 100%;
+    margin-block: 5rem;
+  }
+
+  .form-container {
+    flex-direction: row;
+    align-items: stretch;
+    margin: auto;
+    width: 750px;
+  }
+
+  .form-container > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .inputs-sections {
+    flex: 1;
+    gap: 1rem;
+  }
+
+  .results-section {
+    flex: 1;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 4rem;
+  }
+
+  .tip-choice-section {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .tip-input {
+    font-size: var(--fs-xsmall);
+  }
+
+  .results-list {
+    gap: 2.5rem
+  }
+
+  .tip-dd,
+  .total-dd {
+    font-size: var(--fs-medium-l);
+  }
 }
