@@ -11,62 +11,66 @@
   <script type="module" src="main.js" defer></script>
 </head>
 <body>
-  <main>
+  <main class="container">
     <div class="tip-calculator-logo flex">
       <img src="./images/logo.svg" alt="Tip calculator logo">
     </div>
     <form class="form-container flex">
-      <section class="bill-section flex">
-        <label for="bill" class="labels flex">
-          <span>Bill</span>
-          <span class="error-msg bill-error-msg-js" hidden></span>
-        </label>
-        <input id="bill" class="bill-input bill-js" name="bill" placeholder="0" min="0" type="number" step="0.01"/>
-      </section>
-      <section class="tip-section flex">
-        <h2 class="sr-only">Tip selection</h2>
-        <label for="tip" class="labels flex">
-          <span>Select Tip %</span>
-          <span class="error-msg tip-error-msg-js" hidden></span>
-        </label>
-        <div class="tip-choice-section" role="radiogroup">
-          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="5">5%</button>
-          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="10">10%</button>
-          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="15">15%</button>
-          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="25">25%</button>
-          <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="50">50%</button>
-          <input id="tip" class="tip-input tip-input-js" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false">
-        </div>
-      </section>
-      <section class="number-of-people-section flex">
-        <label for="number-of-people" class="labels flex">
-          <span>Number of People</span>
-          <span class="error-msg people-error-msg-js" hidden></span>
-        </label>
-        <input id="number-of-people" class="number-of-people-input number-of-people-js" name="number-of-people" placeholder="0" min="0" type="number" step="1"/>
-      </section>
-      <section class="results-section flex">
-        <h2 class="sr-only">Results section</h2>
-        <dl class="results-list flex">
-          <div class="results-tip-section flex">
-            <div class="results-data flex">
-              <dt>Tip Amount</dt>
-              <dd class="per-person-dd">/ per person</dd>
-            </div>
-            <dd class="tip-dd">$<span class="tip-amount-js"></span>
-            </dd>
+      <div class="inputs-sections">
+        <section class="bill-section flex">
+          <label for="bill" class="labels flex">
+            <span>Bill</span>
+            <span class="error-msg bill-error-msg-js" hidden></span>
+          </label>
+          <input id="bill" class="bill-input bill-js" name="bill" placeholder="0" min="0" type="number" step="0.01"/>
+        </section>
+        <section class="tip-section flex">
+          <h2 class="sr-only">Tip selection</h2>
+          <label for="tip" class="labels flex">
+            <span>Select Tip %</span>
+            <span class="error-msg tip-error-msg-js" hidden></span>
+          </label>
+          <div class="tip-choice-section" role="radiogroup">
+            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="5">5%</button>
+            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="10">10%</button>
+            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="15">15%</button>
+            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="25">25%</button>
+            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="50">50%</button>
+            <input id="tip" class="tip-input tip-input-js" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false">
           </div>
+        </section>
+        <section class="number-of-people-section flex">
+          <label for="number-of-people" class="labels flex">
+            <span>Number of People</span>
+            <span class="error-msg people-error-msg-js" hidden></span>
+          </label>
+          <input id="number-of-people" class="number-of-people-input number-of-people-js" name="number-of-people" placeholder="0" min="0" type="number" step="1"/>
+        </section>
+      </div>
+      <div class="results">
+        <section class="results-section flex">
+          <h2 class="sr-only">Results section</h2>
+          <dl class="results-list flex">
+            <div class="results-tip-section flex">
+              <div class="results-data flex">
+                <dt>Tip Amount</dt>
+                <dd class="per-person-dd">/ per person</dd>
+              </div>
+              <dd class="tip-dd">$<span class="tip-amount-js"></span>
+              </dd>
+            </div>
 
-          <div class="results-total-section flex">
-            <div class="results-data flex">
-              <dt>Total</dt>
-              <dd class="per-person-dd">/ per person</dd>
+            <div class="results-total-section flex">
+              <div class="results-data flex">
+                <dt>Total</dt>
+                <dd class="per-person-dd">/ per person</dd>
+              </div>
+              <dd class="total-dd">$<span class="total-js"></span></dd>
             </div>
-            <dd class="total-dd">$<span class="total-js"></span></dd>
-          </div>
-        </dl>
-        <button class="reset-btn uppercase reset-btn-js" type="button" disabled>Reset</button>
-      </section>
+          </dl>
+          <button class="reset-btn uppercase reset-btn-js" type="button" disabled>Reset</button>
+        </section>
+      </div>
     </form>
   </main>
 </body>
