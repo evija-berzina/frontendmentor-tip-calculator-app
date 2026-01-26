@@ -400,8 +400,8 @@ input[type="number"] {
 
 @media (min-width: 50rem) {
   body {
-    height: 100%;
-    margin-block: 5rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .form-container {
