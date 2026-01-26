@@ -85,6 +85,7 @@ p {
 
 /* set up the body */
 body {
+  display: flex;
   font-family: var(--ff-spaceMono);
   font-size: var(--fs-s-body);
   font-weight: var(--fw-700);
@@ -92,7 +93,7 @@ body {
   background-color: hsl(var(--clr-grey-200));
   line-height: 1.5;
   letter-spacing: 1px;
-  /* min-height: 100vh; */
+  height: 100dvh;
 }
 
 /* make images easier to work with */
@@ -171,6 +172,11 @@ select {
 /* --------------------------- */
 /* Compontents                 */
 /* --------------------------- */
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 .tip-calculator-logo {
   flex-direction: row;
@@ -181,12 +187,12 @@ select {
 
 .form-container {
   flex-direction: column;
+  flex: 1;
   gap: 1.5rem;
   background-color: hsl(var(--clr-white));
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 1.5rem;
-  bottom: 0;
+  padding: 1.8rem;
 }
 
 .inputs-sections {
