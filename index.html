@@ -11,12 +11,12 @@
   <script type="module" src="main.js" defer></script>
 </head>
 <body>
-  <main class="container">
+  <main class="container flex">
     <div class="tip-calculator-logo flex">
       <img src="./images/logo.svg" alt="Tip calculator logo">
     </div>
     <form class="form-container flex">
-      <div class="inputs-sections">
+      <div class="inputs-sections flex">
         <section class="bill-section flex">
           <label for="bill" class="labels flex">
             <span>Bill</span>
@@ -31,12 +31,12 @@
             <span class="error-msg tip-error-msg-js" hidden></span>
           </label>
           <div class="tip-choice-section" role="radiogroup">
-            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="5">5%</button>
-            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="10">10%</button>
-            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="15">15%</button>
-            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="25">25%</button>
-            <button class="tip-btn tip-btn-js" type="button" role="radio" aria-checked="false" data-value="50">50%</button>
-            <input id="tip" class="tip-input tip-input-js" name="tip" placeholder="Custom" min="0" type="number" step="1" role="radio" aria-checked="false">
+            <button class="tip-btn tip-btn-js" role="radio" aria-checked="false" data-value="5">5%</button>
+            <button class="tip-btn tip-btn-js" role="radio" aria-checked="false" data-value="10">10%</button>
+            <button class="tip-btn tip-btn-js" role="radio" aria-checked="false" data-value="15">15%</button>
+            <button class="tip-btn tip-btn-js" role="radio" aria-checked="false" data-value="25">25%</button>
+            <button class="tip-btn tip-btn-js" role="radio" aria-checked="false" data-value="50">50%</button>
+            <input id="tip" class="tip-input tip-input-js" name="tip" placeholder="Custom" min="0" type="number" step="1">
           </div>
         </section>
         <section class="number-of-people-section flex">
@@ -50,6 +50,7 @@
       <div class="results">
         <section class="results-section flex">
           <h2 class="sr-only">Results section</h2>
+          <!-- nepareizi organizēts dt un dd -->
           <dl class="results-list flex">
             <div class="results-tip-section flex">
               <div class="results-data flex">
