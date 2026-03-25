@@ -35,9 +35,17 @@ billInput.addEventListener('input', () => {
   updateResults();
 });
 
+billInput.addEventListener('keydown', (e) => {
+  if (e.key === 'e' || e.key === 'E') {
+    e.preventDefault();
+  }
+});
+
 tipBtn.forEach(btn => {
   btn.addEventListener('click', () => {
-    tip = Number(btn.dataset.value);
+    const radio = btn.querySelector('input');
+    tip = Number(radio.value);
+
     tipBtn.forEach(b => {
       if(b === btn) {
         b.setAttribute('aria-checked', true);
@@ -95,6 +103,12 @@ numberOfPeople.addEventListener('input', () => {
   }
 
   updateResults();
+});
+
+numberOfPeople.addEventListener('keydown', (e) => {
+  if (e.key === 'e' || e.key === 'E') {
+    e.preventDefault();
+  }
 });
 
 resetBtn.addEventListener('click', () => {
